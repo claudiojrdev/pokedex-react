@@ -1,0 +1,80 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  margin: 50px 100px;
+}
+
+.poke-container{
+  max-width: 80vw;
+  min-width: 40vw;
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+}
+
+.search-bar {
+  height: 70px;
+  background-color: grey;
+  margin-bottom: 50px;
+}
+
+.search-bar input {
+  width: 90%;
+  height: 100%;
+}
+
+.search-bar button {
+  width: 10%;
+  height: 100%;
+}
+
+.poke-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 60px 20px;
+}
+
+.poke-card{
+  height: 180px;
+  width: 300px;
+  background-color: rgb(216, 216, 216);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.poke-card img {
+  position: relative;
+  top: -60px;
+  /* left: 65px; */
+  width: 120px;
+}
+
+.poke-card p {
+  position: relative;
+  top: -70px;
+  font-weight: bold;
+  /* left: 65px; */
+}
+
+.poke-info{
+  position: sticky;
+  top: 50px;
+  margin: 100px 30px 0 30px;
+  background-color:  rgb(75, 75, 75);
+  min-width: 20vw;
+  max-width: 30vw;
+  height: 100vh;
+}
