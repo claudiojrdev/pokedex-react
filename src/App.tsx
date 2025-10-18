@@ -2,10 +2,14 @@ import './App.css'
 import SearchBar from './components/SearchBar'
 import PokeGallery from './components/PokeGallery'
 import { type Pokemon } from './types/DataTypes'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [pokemons,setPokemons] = useState<Pokemon[]>([
+  const [allPokemons,setAllPokemons] = useState<Pokemon[]>([])
+  const [filteredPokemons,setFilteredPokemons] = useState<Pokemon[]>([])
+
+  useEffect(()=>{
+    const dataFromApi = [
               {
               id: 1,
               name: "Bulbassaur",
@@ -31,17 +35,19 @@ function App() {
               name: "Charmeleon",
               img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
               }
-            ])
-  const [filteredPokemons,setFilteredPokemons] = useState<Pokemon[]>(pokemons)
-
+            ]
+    setAllPokemons(dataFromApi)
+    setFilteredPokemons(dataFromApi)
+  },[])
 
   const handleSearch = (searchText: string) => {
-    console.log(searchText)
-    const newPokemons = pokemons.filter(pokemon=>{
-      pokemon.name.toLowerCase().includes(searchText.toLowerCase())
-    })
-    setFilteredPokemons(newPokemons)
-    console.log(filteredPokemons)
+    if (searchText.trim()===''){
+      setFilteredPokemons(allPokemons)
+    }else{
+      const filteredList = allPokemons.filter(pokemon=>
+        pokemon.name.toLowerCase().includes(searchText.toLowerCase()))
+      setFilteredPokemons(filteredList)
+    }
   }
 
   return (
