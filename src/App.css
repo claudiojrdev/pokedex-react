@@ -41,9 +41,11 @@ main{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   list-style: none;
   gap: 60px 20px;
+  max-width: 70vw;
+  min-width: 60vw;
 }
 
 .poke-card{
