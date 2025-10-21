@@ -8,7 +8,7 @@ function PokeInfo({pokemon}:PokeInfoProps) {
 
     return (
         <div className="poke-info">
-            <img src={pokemon.img} />
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon.id}.gif`} />
             <h2>{pokemon.name}</h2>
             <p>{pokemon.id}</p>
         </div>

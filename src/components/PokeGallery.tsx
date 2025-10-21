@@ -9,7 +9,7 @@ interface PokeGalleryProps{
 function PokeGallery ({pokemonList, onOpenInfo}:PokeGalleryProps) {
     return (
         <ul className='poke-gallery'>
-            {pokemonList.map(pokemon => <li className='poke-card' key={pokemon.id}><PokeCard onOpenInfo={onOpenInfo} pokemon={pokemon}/></li>)}
+            {pokemonList.map(pokemon => <li key={pokemon.id}><PokeCard onOpenInfo={onOpenInfo} pokemon={pokemon}/></li>)}
         </ul>
     )
 }
