@@ -62,7 +62,7 @@ function App() {
       <main>
         <div className='poke-container'>
           <SearchBar onSearch={handleSearch}></SearchBar>
-          <PokeGallery pokemonList={filteredPokemons}/>
+          <PokeGallery onOpenInfo={(pokemon)=>setPokemonSelected(pokemon)} pokemonList={filteredPokemons}/>
         </div>
         <PokeInfo pokemon={pokemonSelected}/>
       </main>
