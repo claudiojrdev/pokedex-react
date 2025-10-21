@@ -23,44 +23,66 @@ main{
 
 .search-bar {
   height: 70px;
-  background-color: grey;
   margin-bottom: 50px;
 }
 
 .search-bar input {
-  width: 90%;
+  font-size: 16px;
+  padding-left: 15px;
+  margin-right: 1%;
+  border: 3px solid red;
+  border-radius: 12px;
+  width: 80%;
   height: 100%;
 }
 
 .search-bar button {
-  width: 10%;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  width: 19%;
   height: 100%;
 }
 
+.search-bar button:hover{
+  border: 3px solid red;
+  background-color: white;
+  color: red;
+}
+
 .poke-gallery {
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
   gap: 60px 20px;
-  max-width: 70vw;
-  min-width: 60vw;
+  width: 70vw;
 }
 
 .poke-card{
   height: 180px;
   width: 300px;
-  background-color: rgb(216, 216, 216);
+  border-radius: 18px;
+  background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   flex-direction: column;
+  box-shadow: 0 5px 10px rgba(143, 143, 143, 0.20);
+}
+
+.poke-card:hover{
+  border: 1px solid grey;
+  cursor: pointer;
 }
 
 .poke-card img {
   position: relative;
   top: -60px;
-  /* left: 65px; */
   width: 120px;
 }
 
@@ -68,7 +90,6 @@ main{
   position: relative;
   top: -70px;
   font-weight: bold;
-  /* left: 65px; */
 }
 
 .poke-info{
@@ -76,7 +97,7 @@ main{
   top: 50px;
   margin: 100px 30px 0 30px;
   background-color:  rgb(75, 75, 75);
-  min-width: 20vw;
-  max-width: 30vw;
+  /* min-width: 20vw; */
+  width: 30vw;
   height: 100vh;
 }
