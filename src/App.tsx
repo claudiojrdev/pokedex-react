@@ -11,7 +11,7 @@ interface PokemonListResponse {
 }
 
 function App() {
-  const POKEDEX_LIST_URL = "https://pokeapi.co/api/v2/pokemon?limit=100"
+  const POKEDEX_LIST_URL = "https://pokeapi.co/api/v2/pokemon?limit=151"
   
   const [loading,setLoading] = useState<boolean>(false)
   const [allPokemons,setAllPokemons] = useState<Pokemon[]>([])
@@ -62,7 +62,7 @@ function App() {
       <main>
         <div className='poke-container'>
           <SearchBar onSearch={handleSearch}></SearchBar>
-          <PokeGallery onOpenInfo={(pokemon)=>setPokemonSelected(pokemon)} pokemonList={filteredPokemons}/>
+          <PokeGallery loading = {loading}onOpenInfo={(pokemon)=>setPokemonSelected(pokemon)} pokemonList={filteredPokemons}/>
         </div>
         <PokeInfo pokemon={pokemonSelected}/>
       </main>
