@@ -4,6 +4,7 @@ import PokeGallery from './components/PokeGallery'
 import { type Pokemon } from './types/DataTypes'
 import { useEffect, useState } from 'react'
 import axios from "axios"
+import PokeInfo from './components/PokeInfo'
 
 interface PokemonListResponse {
   results: {name:string, url: string}[]
@@ -15,6 +16,8 @@ function App() {
   const [loading,setLoading] = useState<boolean>(false)
   const [allPokemons,setAllPokemons] = useState<Pokemon[]>([])
   const [filteredPokemons,setFilteredPokemons] = useState<Pokemon[]>([])
+
+  const [pokemonSelected, setPokemonSelected] = useState<Pokemon | undefined>(undefined)
 
   useEffect(()=>{
     const fetchPokemons = async () => {
@@ -61,7 +64,7 @@ function App() {
           <SearchBar onSearch={handleSearch}></SearchBar>
           <PokeGallery pokemonList={filteredPokemons}/>
         </div>
-        <div className='poke-info'></div>
+        <PokeInfo pokemon={pokemonSelected}/>
       </main>
     </>
   )
