@@ -52,7 +52,7 @@ function App() {
       setFilteredPokemons(allPokemons)
     }else{
       const filteredList = allPokemons.filter(pokemon=>
-        pokemon.name.toLowerCase().includes(searchText.toLowerCase()))
+        pokemon.name.toLowerCase().includes(searchText.toLowerCase()) || pokemon.id.toString() === searchText)
       setFilteredPokemons(filteredList)
     }
   }
