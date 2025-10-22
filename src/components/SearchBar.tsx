@@ -13,12 +13,17 @@ function SearchBar ({onSearch}:SearchBarProps) {
         onSearch(searchText)
     }
 
+    const handleSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchText(e.target.value)
+        onSearch(e.target.value)
+    }
+
     return (
         <form className="search-bar" onSubmit={handleSubmit}>
             <input
                 type="text"
                 value={searchText}
-                onChange={(e)=>setSearchText(e.target.value)}
+                onChange={handleSearching}
             />
             <button type="submit">Buscar</button>
         </form>
